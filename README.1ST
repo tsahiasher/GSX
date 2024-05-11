@@ -1,0 +1,63 @@
+                       WINDOWS GSX LIBRARY FOR PC
+                       --------------------------
+
+ Using the windows version of GSX:
+
+  This library is written for IBM-PC machines on windows system. It is compatible
+  with the Sun Sparc machine version, written for the Computer-Graphics
+  course. Your sources, written on the Sun should work, almost as is.
+
+  1) This is what you have to do in order to compile your program for windows:
+     a) make sure you have all the files:
+	gsxw.c/.h/.rc/.ico/.def.	
+     b) Include your main to gsxw.h.
+     c) Change your main function to Gmain(int argc,char *argv[]). The parameters
+        are important.
+     d) That's all. Now compile your program in a compiler for windows 
+        (Borland C 4(.x), Visual C++ etc.) and run it.
+  
+  2) The GSX is an event-driven graphics library, with mouse support.
+    In an event-driven application, the main idea is that you 'tie'
+    an event to a function which is executed immediately as that
+    event occurs. After setting all the desired functions, using
+    GFuncSet(FuncV func, GEventT type) (see gsxw.h for details, prototypes,
+    etc), you enter into a loop waiting for any 'event' to happen.
+    That is done by GMainLoop(). You can learn it all by the small 
+    example I added to this package.
+    
+  3) GRedraw is the event that draws the window again. In order for that event
+     To do that, you must take out the comment in the WM_PAINT case in 
+     function MainWndProc in gsxw.c. Usually when you get this message, you 
+     draw all your shapes again. so what you have to do is to keep a structure 
+     that contain all of your shapes and using it draw the window.
+     The event is in comment because if it is not the window does not
+     handle redraw in the propre manner
+
+  4) List of files included:
+	gsxw.c
+	gsxw.h
+	gsxw.ico  (the icon for the program)
+	gsxw.def  (main definitions file)
+	gsxw.rc   (resorces file)
+        
+	Demo/demo.c  (a small demo program)
+	Demo/gsxw.c
+	Demo/gsxw.h
+	Demo/gsxw.ico
+	Demo/gsxw.def
+	Demo/gsxw.rc   
+
+	That's it. Any problem - feel free to ask/mail me. My E-mail is tsahi@cs.
+
+
+       GOOD LUCK.
+
+               Tsahi
+
+
+
+ P.S. --
+
+ 1. The libraries are for internal use only. Please don't spread them around.
+
+

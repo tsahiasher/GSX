@@ -1,0 +1,21 @@
+
+#define IDM_QUIT	101
+#define IDM_ABOUT	100
+#define GSX			200
+//////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+GSX                  ICON    DISCARDABLE     "gsxw.ico"
+
+GSXMENU MENU
+{
+ POPUP "&Help"
+ {
+  MENUITEM "&About Gsx...", IDM_ABOUT
+ }
+
+ MENUITEM "&Quit", IDM_QUIT
+}
+
